@@ -3,6 +3,10 @@ const express = require('express');
 const app = express();
 const io = require('socket.io')();
 
+//new code
+users =[];
+connections = [];
+
 // some config stuff
 const PORT = process.env.port || 3000;
 
@@ -22,7 +26,7 @@ io.attach(server);
 
 // plug in socket.io
 io.on('connection', function(socket) {
-	console.log('a user has connected');
+	console.log('a user has connected: %s sockets connected', connections.lenght);
 	io.emit('chat message', { for: 'everyone', message: `${socket.id} is here to par TAY!!` });
 
 	// listen for a message, and then send it where it needs to go
@@ -35,7 +39,7 @@ io.on('connection', function(socket) {
 
 	// listen for disconnet
 	socket.on('disconnect', function() {
-		console.log('a user disconnected');
+		console.log('a user disconnected: %s sockets connected', connections.lenght);
 		msg = `${socket.id} has left the building!`;
 		io.emit('disconnect message', msg);
 	});
