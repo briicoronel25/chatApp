@@ -1,7 +1,18 @@
-## Requirements / Getting Set Up
-Node, NPM and Express
+# Chat App
+This is a chat app assignment using socket.io and node.
 
-1. Clone into the directory of your choice
-2. NPM install to grab dependencies
-3. run node app in the root of your project
-4. navigate to localhost:3000 and you should be good to go
+## Before using
+
+1. Do an NPM install
+2. Download *socket.io, express, node and grunt*
+3. Install and run node
+4. Navigate to localhost:3030 and **START CHATTING!**
+
+## This project include
+node.js,
+grunt,
+package.json,
+SASS.
+
+## Created by
+Briggite Coronel
